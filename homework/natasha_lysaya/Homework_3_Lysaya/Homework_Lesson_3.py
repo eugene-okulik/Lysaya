@@ -32,17 +32,19 @@ print("Среднее геометрическое:", geometric_result)
 leg1 = 6
 leg2 = 8
 
+
 def calculate_hypotenuse(leg1, leg2):
     hypotenuse = (leg1 ** 2 + leg2 ** 2) ** 0.5
     return hypotenuse
 
+
 def calculate_area(leg1, leg2):
     area = 0.5 * leg1 * leg2
     return area
+
 
 hypotenuse = calculate_hypotenuse(leg1, leg2)
 area = calculate_area(leg1, leg2)
 
 print("Гипотенуза треугольника:", hypotenuse)
 print("Площадь треугольника:", area)
-
