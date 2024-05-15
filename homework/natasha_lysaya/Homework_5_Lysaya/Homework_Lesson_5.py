@@ -17,7 +17,7 @@ value_3 = int(response_data[2][response_data[2].index(':') + 2:]) + 10
 print(value_1, value_2, value_3)
 
 
-#ВОТ ЭТО МЕТОД НАШЛА БЫСТРЕЕ И ОН НАМНОГО ПРОЩЕ)))
+# ВОТ ЭТО МЕТОД НАШЛА БЫСТРЕЕ И ОН НАМНОГО ПРОЩЕ)))
 # value_1 = int(response_data[0].split()[-1]) + 10
 # value_2 = int(response_data[1].split()[-1]) + 10
 # value_3 = int(response_data[2].split()[-1]) + 10
