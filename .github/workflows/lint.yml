@@ -2,8 +2,9 @@ name: flake8 Lint
 
 on:
   push:
+  pull_request_target:
   pull_request:
-    types: [opened, reopened, review_requested, assigned]
+    types: [opened, reopened, review_requested, assigned, unassigned, edited]
 
 jobs:
   flake8-lint:
