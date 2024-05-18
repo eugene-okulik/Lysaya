@@ -5,7 +5,6 @@ number = 8
 while True:
     input_number = input('Enter the number: ')
 
-
     if input_number.isdigit():
         input_number = int(input_number)
         if input_number == number:
