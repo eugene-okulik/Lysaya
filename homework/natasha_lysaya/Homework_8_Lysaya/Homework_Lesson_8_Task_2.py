@@ -9,7 +9,7 @@ def fibonacci_numbers():
     b = decimal.Decimal(1)
     while True:
         yield a
-        a, b = b,  a + b
+        a, b = b, a + b
 
 
 def generator_fibonacci_number(position):

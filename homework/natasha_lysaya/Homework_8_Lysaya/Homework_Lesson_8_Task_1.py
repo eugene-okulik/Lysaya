@@ -5,7 +5,7 @@ salary = int(input('Please, share your salary: '))
 bonus = bool(random.random() > 0.5)
 
 
-if bonus == True:
+if bonus:
     # Предположим, что в реальной жизни бонус не может быть больше 2ух ЗП и точно есть
     added_bonus = random.randint(1, salary * 2)
     # В нереальной может быть оооооочень большой и никакой
