@@ -42,8 +42,8 @@ class SchoolBook(Book):
 
 
 school_book1 = SchoolBook('Алгебра', 'Иванов', 124, '177777777', "Математика", 7, True)
-school_book2 = SchoolBook('Биология', 'Петров', 85,'88888999888', "Биология", 6, True)
-school_book3 = SchoolBook('География', 'Сидоров', 99,'1777677-01', "География", 8, True, True)
+school_book2 = SchoolBook('Биология', 'Петров', 85, '88888999888', "Биология", 6, True)
+school_book3 = SchoolBook('География', 'Сидоров', 99, '1777677-01', "География", 8, True, True)
 
 
 books = [book1, book2, book3, book4, book5, school_book1, school_book2, school_book3]
