@@ -56,22 +56,21 @@ class Bouquet:
                 self.found_flowers.append(flower)
 
     def __repr__(self):
-        info = f"Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers)
-        info += f"\n Букет завянет через {self.wilting_time():.2f} дней"
-        info += f"\n Полная стоимость букета: ${bouquet.total_cost()}"
+        info = (f"Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers))
+        info += (f"\n Букет завянет через {self.wilting_time():.2f} дней")
+        info += (f"\n Полная стоимость букета: ${bouquet.total_cost()}")
         if self.key:
-            info += f"\n Отсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers)
+            info += (f"\n Отсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers))
         if self.found_flowers:
-            info += f"\n Найденны цветы: " + ", ".join(repr(flower) for flower in self.found_flowers)
+            info += (f"\n Найденны цветы: " + ", ".join(repr(flower) for flower in self.found_flowers))
         return info
-
 
 
 rose = HothouseFlower('poза', 'red', 'теплица', 'все сезоны', 10, 5, True)
 lily = HothouseFlower('лилия', 'white', 'теплица', 'лето', 8, 10, False)
 peony = GardenFlower('пион', 'rose', 'сад', 'осень', 12, 4, True)
 chamomile = WildFlower('ромашка', 'white', 'поле', 'лето', 5, 1, True)
-dandelion = WildFlower('одуванчик', 'yellow', 'поле', 'лето', 2,1, False)
+dandelion = WildFlower('одуванчик', 'yellow', 'поле', 'лето', 2, 1, False)
 
 bouquet = Bouquet()
 bouquet.collect_flowers(rose)
