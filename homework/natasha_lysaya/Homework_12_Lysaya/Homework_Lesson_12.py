@@ -33,6 +33,7 @@ class Bouquet:
     def __init__(self):
         self.flowers = []
         self.key = None
+        self.param = None
         self.found_flowers = []
 
     def collect_flowers(self, flower):
@@ -50,19 +51,20 @@ class Bouquet:
         self.key = key
 
     def find_flowers(self, key, param):
+        self.param = param
         self.found_flowers = []
         for flower in self.flowers:
             if getattr(flower, key) == param:
                 self.found_flowers.append(flower)
 
     def __repr__(self):
-        info = f"Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers)
-        info += f"\n Букет завянет через {self.wilting_time():.2f} дней"
-        info += f"\n Полная стоимость букета: ${self.total_cost()}"
+        info = "Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers)
+        info += f"\nБукет завянет через {self.wilting_time():.2f} дней"
+        info += f"\nПолная стоимость букета: ${self.total_cost()}"
         if self.key:
-            info += f"\n Отсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers)
+            info += f"\nОтсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers)
         if self.found_flowers:
-            info += f"\n Найденны цветы: " + ", ".join(repr(flower) for flower in self.found_flowers)
+            info += f"\nНайдены цветы по {self.param}: " + ", ".join(repr(flower) for flower in self.found_flowers)
         return info
 
 
