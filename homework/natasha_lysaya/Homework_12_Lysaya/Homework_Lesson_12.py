@@ -56,13 +56,13 @@ class Bouquet:
                 self.found_flowers.append(flower)
 
     def __repr__(self):
-        info = (f"Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers))
-        info += (f"\n Букет завянет через {self.wilting_time():.2f} дней")
-        info += (f"\n Полная стоимость букета: ${bouquet.total_cost()}")
+        info = f"Букет содержит следующие цветы: " + ", ".join(repr(flower) for flower in self.flowers)
+        info += f"\n Букет завянет через {self.wilting_time():.2f} дней"
+        info += f"\n Полная стоимость букета: ${self.total_cost()}"
         if self.key:
-            info += (f"\n Отсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers))
+            info += f"\n Отсортировали по парамтру {self.key}: " + ", ".join(repr(flower) for flower in self.flowers)
         if self.found_flowers:
-            info += (f"\n Найденны цветы: " + ", ".join(repr(flower) for flower in self.found_flowers))
+            info += f"\n Найденны цветы: " + ", ".join(repr(flower) for flower in self.found_flowers)
         return info
 
 
