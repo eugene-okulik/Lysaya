@@ -48,31 +48,6 @@ cursor.execute('SELECT id, title FROM subjets')
 subject_id_map = {title: id for id, title in cursor.fetchall()}
 
 
-lessons = [
-    ('Introduction', subject_id_map['Programming']),
-    ('SQL syntax', subject_id_map['Programming']),
-    ('SQL injections', subject_id_map['SQL Databases']),
-    ('SQL security', subject_id_map['SQL Databases'])
-]
-
-lesson_id_map = {}
-for lesson in lessons:
-    cursor.execute('''
-    INSERT INTO lessons (title, subject_id) VALUES (%s, %s)
-    ''', lesson)
-    lesson_id_map[lesson[0]] = cursor.lastrowid
-
-
-marks = [
-    (5, student_id, lesson_id_map['Introduction']),
-    (5, student_id, lesson_id_map['SQL syntax']),
-    (5, student_id, lesson_id_map['SQL injections']),
-    (5, student_id, lesson_id_map['SQL security'])
-]
-cursor.executemany('''
-INSERT INTO marks (value, student_id, lesson_id) VALUES (%s, %s, %s)
-''', marks)
-
 # Вставка уроков и получение их ID по одному
 lessons = [
     ('Introduction', subject_id_map['Programming']),
@@ -81,12 +56,14 @@ lessons = [
     ('SQL security', subject_id_map['SQL Databases'])
 ]
 
+
 lesson_id_map = {}
 for lesson in lessons:
     cursor.execute('''
     INSERT INTO lessons (title, subject_id) VALUES (%s, %s)
     ''', lesson)
     lesson_id_map[lesson[0]] = cursor.lastrowid
+
 
 marks = [
     (5, student_id, lesson_id_map['Introduction']),
@@ -97,7 +74,6 @@ marks = [
 cursor.executemany('''
 INSERT INTO marks (value, student_id, lesson_id) VALUES (%s, %s, %s)
 ''', marks)
-
 
 print("Все оценки студента:")
 cursor.execute('SELECT * FROM marks WHERE student_id = %s', (student_id,))
