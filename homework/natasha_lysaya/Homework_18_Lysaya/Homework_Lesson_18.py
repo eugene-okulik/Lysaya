@@ -1,7 +1,7 @@
 import requests
 
 
-#ФУНКЦИЯ СОЗДАНИЯ НОВОГО ОБЪЕКТА МЕТОДОМ POST
+# ФУНКЦИЯ СОЗДАНИЯ НОВОГО ОБЪЕКТА МЕТОДОМ POST
 def create_object():
     body = {
         "name": "Apple MacBook Pro 16",
@@ -19,10 +19,9 @@ def create_object():
     assert response.json()['data'] == body['data'], f"Incorrect object data {response.json()['data']}"
     print("Test 1 passed successfully!")
     print(f"Status code {response.status_code}. New created object {response.json()['id']}")
-    # return response.json()['id']
 
 
-#МЕТОД ДЛЯ СОЗДАНИЯ НОВОГО ОБЪЕКТА
+# МЕТОД ДЛЯ СОЗДАНИЯ НОВОГО ОБЪЕКТА
 def new_object():
     body = {
         "name": "Apple MacBook Pro 16",
@@ -38,12 +37,12 @@ def new_object():
     return response.json()['id']
 
 
-#МЕТОД ДЛЯ УДАЛЕНИЯ ОБЪЕКТА
+# МЕТОД ДЛЯ УДАЛЕНИЯ ОБЪЕКТА
 def clear(post_id):
     requests.delete(f'https://api.restful-api.dev/objects/{post_id}')
 
 
-#ФУНКЦИЯ ИЗМЕНЕНИЯ ОБЪЕКТА МЕТОДОМ PUT
+# ФУНКЦИЯ ИЗМЕНЕНИЯ ОБЪЕКТА МЕТОДОМ PUT
 def change_object_put():
     post_id = new_object()
     body = {
