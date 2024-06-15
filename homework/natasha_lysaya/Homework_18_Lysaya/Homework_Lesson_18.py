@@ -80,7 +80,7 @@ def change_object_patch():
 # ФУНКЦИЯ УДАДЕНИЯ ОБЪЕКТА
 def delete_object():
     post_id = new_object()
-    response = requests.put(f"https://api.restful-api.dev/objects/{post_id}")
+    response = requests.delete(f"https://api.restful-api.dev/objects/{post_id}")
     print("Test 4 passed successfully!")
     print(f"Status code {response.status_code}. Required object has been deleted")
     print(response.json())
