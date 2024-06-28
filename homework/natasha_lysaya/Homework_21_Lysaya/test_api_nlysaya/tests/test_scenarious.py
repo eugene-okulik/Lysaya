@@ -37,8 +37,20 @@ TEST_DATA = [
 ]
 
 NEGATIVE_DATA = [
-    {"name": ["My title"], "data": {"year": 2019, "price": 1849.99, "CPU model": "Intel Core i9", "Hard disk size": "1 TB"}},
-    {"name": {"My title2": ''}, "data": {"year": 2020, "price": 999.99, "CPU model": "Intel Core i7", "Hard disk size": "512 GB"}}
+    {
+        "name": ["My title"],
+        "data": {"year": 2019,
+                 "price": 1849.99,
+                 "CPU model": "Intel Core i9",
+                 "Hard disk size": "1 TB"}
+    },
+    {
+        "name": {"My title2": ''},
+        "data": {"year": 2020,
+                 "price": 999.99,
+                 "CPU model": "Intel Core i7",
+                 "Hard disk size": "512 GB"}
+    }
 ]
 
 
