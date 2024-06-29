@@ -7,7 +7,7 @@ import allure
 @allure.story('Post objects')
 @allure.title('Создание объекта')
 @allure.severity('critical')
-def create_object():
+def test_create_object():
     body = {
         "name": "Apple MacBook Pro 16",
         "data": {
@@ -52,7 +52,7 @@ def clear(post_id):
 @allure.story('Change objects')
 @allure.title('Полное изменение объекта')
 @allure.severity('normal')
-def change_object_put():
+def test_change_object_put():
     post_id = new_object()
     body = {
         "name": "Apple MacBook Pro 16",
@@ -77,7 +77,7 @@ def change_object_put():
 @allure.story('Change objects')
 @allure.title('Частичное изменение объекта')
 @allure.severity('normal')
-def change_object_patch():
+def test_change_object_patch():
     post_id = new_object()
     body = {
         "name": "Apple MacBook Pro 16 (Updated Name)"
@@ -95,7 +95,7 @@ def change_object_patch():
 @allure.story('Delete objects')
 @allure.title('Удаление объекта')
 @allure.severity('minor')
-def delete_object():
+def test_delete_object():
     post_id = new_object()
     response = requests.delete(f"https://api.restful-api.dev/objects/{post_id}")
     print("Test 4 passed successfully!")
@@ -103,7 +103,7 @@ def delete_object():
     print(response.json())
 
 
-create_object()
-change_object_put()
-change_object_patch()
-delete_object()
+test_create_object()
+test_change_object_put()
+test_change_object_patch()
+test_delete_object()
