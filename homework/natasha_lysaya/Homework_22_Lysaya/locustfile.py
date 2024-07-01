@@ -10,10 +10,8 @@ class ApiUser(HttpUser):
     # iteration_count = 0
     # max_iterations = 100
 
-
     def on_start(self):
         self.headers = {'Content-Type': 'application/json'}
-
 
     def create_object(self):
         payload = {
@@ -29,11 +27,9 @@ class ApiUser(HttpUser):
         response.raise_for_status()
         return response.json()['id']
 
-
     def delete_object(self, object_id):
         response = self.client.delete(f"/objects/{object_id}", headers=self.headers)
         response.raise_for_status()
-
 
     @task(1)
     def get_random_object(self):
@@ -44,7 +40,6 @@ class ApiUser(HttpUser):
         assert received_object[
             'id'] == object_id, f"Expected object with ID '{object_id}' but got '{received_object['id']}'"
         self.delete_object(object_id)
-
 
     @task(2)
     def create_and_verify_object(self):
@@ -64,7 +59,6 @@ class ApiUser(HttpUser):
         assert response.json()['data'] == payload['data']
         self.delete_object(object_id)
 
-
     @task(3)
     def update_object_put(self):
         object_id = self.create_object()
@@ -83,7 +77,6 @@ class ApiUser(HttpUser):
         assert response.json()['data'] == payload['data']
         self.delete_object(object_id)
 
-
     @task(4)
     def update_object_patch(self):
         object_id = self.create_object()
@@ -94,7 +87,6 @@ class ApiUser(HttpUser):
         response.raise_for_status()
         assert response.json()['name'] == payload['name']
         self.delete_object(object_id)
-
 
     @task(5)
     def delete_object_task(self):
