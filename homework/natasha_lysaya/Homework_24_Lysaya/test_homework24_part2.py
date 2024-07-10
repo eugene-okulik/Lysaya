@@ -26,7 +26,7 @@ def test_add_product_to_compare(driver):
     actions = ActionChains(driver)
     actions.move_to_element(first_product).perform()
     add_to_compare_button = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, ".products-grid .product-item:first-child .actions-secondary .tocompare"))
+        (By.CSS_SELECTOR, ".products-grid .product-item:first-child .actions-secondary .tocompare"))
     )
     add_to_compare_button.click()
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".block.block-compare")))
