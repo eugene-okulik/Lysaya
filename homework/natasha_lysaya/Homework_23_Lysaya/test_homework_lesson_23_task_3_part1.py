@@ -21,7 +21,7 @@ def test_select_language(driver):
         EC.presence_of_element_located((By.ID, "id_choose_language"))
     )
     select_element.click()
-    driver.find_element(By.XPATH,f"//option[text()='{LANGUAGE}']").click()
+    driver.find_element(By.XPATH, f"//option[text()='{LANGUAGE}']").click()
     driver.find_element(By.TAG_NAME, "body").click()
 
     submit_button = WebDriverWait(driver, 10).until(
